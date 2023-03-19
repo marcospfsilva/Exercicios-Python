@@ -22,6 +22,8 @@ class Televisao:
     def diminui_canal(self):
         if self.ligada ==True:
             self.canal -=1
+            
+televisao = Televisao()
 
 #Na classe streaming pode haver o ativamento da Netflix ou Prime Video ou o desligamento para tv comum.            
 class Streaming:
@@ -44,8 +46,6 @@ class Streaming:
 
 streaming = Streaming()
     
-
-televisao = Televisao()
 
 print("A tv está ligada?: {}" .format(televisao.ligada))
 
