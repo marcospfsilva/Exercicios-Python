@@ -22,6 +22,27 @@ class Televisao:
     def diminui_canal(self):
         if self.ligada ==True:
             self.canal -=1
+
+#Na classe streaming pode haver o ativamento da Netflix ou Prime Video ou o desligamento para tv comum.            
+class Streaming:
+    def __init__(self):
+        self.tipo_streaming = 'TV comum'
+        
+    def netflix(self):
+        if televisao.ligada == True:
+            if self.tipo_streaming == 'Netflix':
+                self.tipo_streaming = 'TV comum'
+            else:
+                self.tipo_streaming = 'Netflix'
+    
+    def prime_video(self):
+        if televisao.ligada == True:
+            if self.tipo_streaming == 'PrimeVideo':
+                self.tipo_streaming = 'TV comum'
+            else:
+                self.tipo_streaming = 'Prime Video'
+
+streaming = Streaming()
     
 
 televisao = Televisao()
@@ -35,4 +56,9 @@ print("A tv está ligada?: {}" .format(televisao.ligada))
 #Aumentou um canal se entender que a tv está ligada
 televisao.aumenta_canal()
 print("Canal: {}".format(televisao.canal))
+
+#Ativou a Netflix
+streaming.netflix()
+print('Em qual streaming está?: {}'.format(streaming.tipo_streaming))
+
 
